@@ -1,6 +1,6 @@
 import './globals.css'
 import localFont from "@next/font/local";
-import { Roboto } from "@next/font/google";
+import { Noto_Sans_KR } from "@next/font/google";
 
 export const metadata = {
   title: 'Jake.log',
@@ -14,7 +14,7 @@ export const metadata = {
   }
 }
 
-const roboto = Roboto({
+const roboto = Noto_Sans_KR({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-roboto'
@@ -60,7 +60,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="kr">
-      <body className={`${multima.className} ${roboto.className}`}>
+      <body className={`${multima.className} ${roboto.variable}`}>
       {children}
       </body>
     </html>
