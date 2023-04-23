@@ -1,11 +1,11 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Header from '@/components/organisms/Header';
+import Greeting from '@/components/molecule/Greeting';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col p-6 gap-8">
+      <Header />
+      <Greeting />
     </main>
   )
 }
