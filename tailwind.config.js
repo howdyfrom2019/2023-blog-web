@@ -3,14 +3,20 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 module.exports = {
   content: [
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/atom/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/molecule/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/organisms/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ['var(--font-multima)', 'var(--font-roboto)', ...defaultTheme.fontFamily.sans],
         roboto: ['var(--font-roboto)', ...defaultTheme.fontFamily.sans],
+      },
+      borderWidth: {
+        px: '1px',
       },
       colors: {
         'bg-white-1': '#f9f6ee',
