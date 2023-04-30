@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from 'tailwindcss/defaultTheme';
 
 module.exports = {
   content: [
@@ -8,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-multima)', 'var(--font-roboto)', ...defaultTheme.fontFamily.sans],
-        roboto: ['var(--font-roboto)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-multima)', 'var(--font-roboto)', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'sans-serif'],
       },
       borderWidth: {
         px: '1px',
