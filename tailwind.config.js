@@ -3,11 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 module.exports = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/atom/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/molecule/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/organisms/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {

@@ -50,6 +50,7 @@ const multima = localFont({
       style: 'italic'
     },
   ],
+  fallback: ['var(--font-roboto)', 'sans-serif'],
   variable: '--font-multima'
 })
 

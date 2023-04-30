@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /*@font-face {*/
+  /*  font-family: var(--font;*/
+  /*}*/
+}
 @layer utilities {
   .font-regular-12 {
     font-style: normal;
