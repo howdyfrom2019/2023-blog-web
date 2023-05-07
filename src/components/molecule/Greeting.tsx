@@ -15,9 +15,9 @@ const Greeting = () => {
       <div className={'flex flex-col absolute top-1/2 left-0 -translate-y-1/2 gap-3'}>
         <Chip>HELLO 🖐️</Chip>
         <span className={'font-bold-32'}>{state}!</span>
-        <span className={'font-medium-16 font-roboto'}>{msg}</span>
+        <span className={'font-medium-16 font-sans'}>{msg}</span>
         <NoSSR>
-          <li className={'font-medium-12 font-roboto'}>
+          <li className={'font-medium-12 font-sans'}>
             {state === 'GM' && `${GM[index].key}: ${GM[index].content}`}
             {state === 'GA' && `${GA[index].key}: ${GA[index].content}`}
             {state === 'GN' && `${GN[index].key}: ${GN[index].content}`}
