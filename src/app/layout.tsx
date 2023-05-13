@@ -1,6 +1,7 @@
 import './globals.css'
 import localFont from "@next/font/local";
 import { Noto_Sans_KR } from "@next/font/google";
+import clsx from "clsx";
 
 export const metadata = {
   title: 'Jake.log',
@@ -15,12 +16,14 @@ export const metadata = {
 }
 
 const roboto = Noto_Sans_KR({
+  preload: true,
   weight: ['400', '500', '700'],
   subsets: ['latin'],
-  variable: '--font-roboto'
+  variable: '--font-roboto',
 });
 
 const multima = localFont({
+  preload: true,
   src: [
     {
       path: '../../public/fonts/Multima-Bold.woff',
@@ -50,7 +53,7 @@ const multima = localFont({
       style: 'italic'
     },
   ],
-  fallback: ['var(--font-roboto)', 'sans-serif'],
+  fallback: ['--font-roboto','sans-serif'],
   variable: '--font-multima'
 })
 
@@ -61,7 +64,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="kr">
-      <body className={`${multima.className} ${roboto.variable}`}>
+      <body className={clsx([roboto.variable, multima.className])}>
       {children}
       </body>
     </html>

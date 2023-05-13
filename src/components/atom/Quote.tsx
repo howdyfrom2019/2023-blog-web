@@ -7,7 +7,7 @@ interface QuoteProps {
 const Quote = ({ children }: QuoteProps) => {
   return (
     <blockquote className={clsx([
-      'text-primaryScale-400 font-medium-16',
+      'text-primaryScale-400 font-medium-16 font-sans',
       'quote-block before:bg-primaryScale-100'
     ])}
     >

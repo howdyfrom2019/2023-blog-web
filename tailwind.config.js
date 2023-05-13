@@ -1,15 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-multima)', 'var(--font-roboto)', ...defaultTheme.fontFamily.sans],
-        roboto: ['var(--font-roboto)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-multima)'],
+        roboto: 'var(--font-roboto)',
       },
       borderWidth: {
         px: '1px',
