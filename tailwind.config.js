@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-multima)'],
+        sans: ['var(--font-multima)', 'var(--font-roboto)'],
         roboto: 'var(--font-roboto)',
       },
       borderWidth: {

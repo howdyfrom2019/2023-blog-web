@@ -17,7 +17,7 @@ const Greeting = () => {
         <span className={'font-bold-32 font-sans'}>{state}!</span>
         <span className={'font-medium-16 font-roboto'}>{msg}</span>
         <NoSSR>
-          <li className={'font-medium-12 font-sans'}>
+          <li className={'font-medium-12 font-roboto'}>
             {state === 'GM' && `${GM[index].key}: ${GM[index].content}`}
             {state === 'GA' && `${GA[index].key}: ${GA[index].content}`}
             {state === 'GN' && `${GN[index].key}: ${GN[index].content}`}
