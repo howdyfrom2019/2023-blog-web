@@ -2,14 +2,14 @@
 import ArrowLink from '@/assets/arrow-link.svg';
 import Chip from "@/components/atom/Chip";
 
-interface Props {
+export interface SummaryProps {
   title: string;
   to: string;
   description?: string;
   categories?: string[];
 }
 
-const LinkArticleSummary = ({ title, to, description, categories }: Props) => {
+const LinkArticleSummary = ({ title, to, description, categories }: SummaryProps) => {
   return (
     <section className={'flex flex-col gap-3'}>
       <div className={'flex flex-nowrap gap-2 cursor-pointer'}>
