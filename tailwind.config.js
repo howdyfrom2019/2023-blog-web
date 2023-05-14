@@ -13,6 +13,9 @@ module.exports = {
       borderWidth: {
         px: '1px',
       },
+      borderWidth: {
+        px: '1px',
+      },
       colors: {
         'bg-white-1': '#f9f6ee',
         primary: '#1831bc',
