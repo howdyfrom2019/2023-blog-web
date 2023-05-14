@@ -102,6 +102,20 @@
     transform-origin: bottom left;
   }
 
+  .quote-block {
+    position: relative;
+    margin-left: 12px;
+  }
+
+  .quote-block::before {
+    content: '';
+    clear: both;
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 4px;
+    height: 100%;
+  }
 }
 
 :root {
