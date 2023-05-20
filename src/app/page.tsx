@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Footer from "@/components/organisms/Footer";
 import Quote from "@/components/atom/Quote";
 const Greeting = dynamic(() => import('@/components/molecule/Greeting'), { ssr: false });
-
+  
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen justify-between">
