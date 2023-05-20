@@ -33,11 +33,16 @@ module.exports = {
       },
       animation: {
         removeFilter: 'removeFilter 0.3s ease-in-out infinite',
+        searchBarAppear: 'searchBarAppear 0.3s ease-in-out forwards',
       },
       keyframes: {
         removeFilter: {
           from: { filter: 'sepia(100%) hue-rotate(190deg) saturate(900%)' },
           to: { filter: 'none' }
+        },
+        searchBarAppear: {
+          from: { transform: 'translate(-50%, -100%)', zIndex: -10, opacity: 0 },
+          to: { transform: 'translate(-50%)', zIndex: 999, opacity: 1 }
         }
       }
     },

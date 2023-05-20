@@ -8,7 +8,7 @@ const LinkArticleThumbnail = ({ ...props }: Props) => {
   return (
     <div className={'relative flex flex-col w-[280px]'}>
       <img
-        className={'filter sepia-[8%] hue-rotate-[190deg] saturate-[200%]'}
+        className={'filter saturate-0'}
         src={'https://i.imgur.com/R5wBNhu.jpeg'}
         alt={'test'}
         width={280}
