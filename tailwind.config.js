@@ -13,9 +13,6 @@ module.exports = {
       borderWidth: {
         px: '1px',
       },
-      borderWidth: {
-        px: '1px',
-      },
       colors: {
         'bg-white-1': '#f9f6ee',
         primary: '#1831bc',
@@ -27,6 +24,9 @@ module.exports = {
         primaryAlpha: {
           40: '#1831BC66'
         }
+      },
+      borderSpacing: {
+        px: '1px',
       },
       boxShadow: {
         'search-bar': '0 4px 16px rgba(0, 0, 0, 0.25)',
