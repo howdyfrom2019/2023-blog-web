@@ -1,13 +1,12 @@
-'use client'
+"use client";
+import withGithubAuth from "@/features/auth/withGithubAuth";
 import { NextPage } from "next";
-import BlogPostRichEditor from '@/components/organisms/BlogPostRichEditor';
 
-const New:NextPage = () => {
+const New: NextPage = (props) => {
+  console.log(props);
   return (
-    <div className={'flex items-center'}>
-      <BlogPostRichEditor />
-    </div>
-  )
-}
+    <div className={"flex items-center"}>{/* <BlogPostRichEditor /> */}</div>
+  );
+};
 
-export default New;
+export default withGithubAuth(New);
