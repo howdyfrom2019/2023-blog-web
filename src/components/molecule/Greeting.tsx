@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Chip from '@/components/atom/Chip';
 import Grid from '@/components/atom/Grid';
 import { useMemo } from 'react';
@@ -12,7 +12,11 @@ const Greeting = () => {
 
   return (
     <Grid>
-      <div className={'flex flex-col absolute top-1/2 left-0 -translate-y-1/2 gap-3'}>
+      <div
+        className={
+          'flex flex-col absolute top-1/2 left-0 -translate-y-1/2 gap-3'
+        }
+      >
         <Chip>HELLO 🖐️</Chip>
         <span className={'font-bold-32 font-sans'}>{state}!</span>
         <span className={'font-medium-16 font-roboto'}>{msg}</span>
@@ -25,7 +29,7 @@ const Greeting = () => {
         </NoSSR>
       </div>
     </Grid>
-  )
-}
+  );
+};
 
 export default Greeting;

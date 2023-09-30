@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import NavLink from '@/components/atom/NavLink';
 
 const Navigation = () => {
@@ -9,7 +9,7 @@ const Navigation = () => {
       <NavLink to={'/life'} value={'Life'} />
       <NavLink to={'/contact'} value={'Contact'} />
     </nav>
-  )
-}
+  );
+};
 
 export default Navigation;

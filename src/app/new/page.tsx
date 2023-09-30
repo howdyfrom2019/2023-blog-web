@@ -1,12 +1,14 @@
-"use client";
-import withGithubAuth from "@/features/auth/withGithubAuth";
-import { NextPage } from "next";
+'use client';
+import GithubAuthLogin from '@/features/auth/GithubAuthLogin';
+import { NextPage } from 'next';
 
-const New: NextPage = (props) => {
-  console.log(props);
+const New: NextPage = () => {
   return (
-    <div className={"flex items-center"}>{/* <BlogPostRichEditor /> */}</div>
+    <div className={'flex items-center'}>
+      {/* <BlogPostRichEditor /> */}
+      {/* <GithubAuthLogin /> */}
+    </div>
   );
 };
 
-export default withGithubAuth(New);
+export default New;
