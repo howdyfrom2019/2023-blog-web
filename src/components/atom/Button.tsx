@@ -1,4 +1,5 @@
 'use client';
+import cn from '@/utils/cn';
 import { ComponentProps } from 'react';
 
 type btnType = 'primary' | 'clear';
@@ -11,7 +12,7 @@ const CLEAR_UTILITY =
 const Button = ({ btnType, className, children, ...props }: BtnType) => {
   return (
     <button
-      className={`${btnType === 'clear' && CLEAR_UTILITY} ${className}`}
+      className={cn([btnType === 'clear' && CLEAR_UTILITY, className])}
       {...props}
     >
       {children}

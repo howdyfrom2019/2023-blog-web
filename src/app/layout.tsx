@@ -2,6 +2,7 @@ import './globals.css';
 import localFont from '@next/font/local';
 import { Noto_Sans_KR } from '@next/font/google';
 import clsx from 'clsx';
+import FirebaseProvider from '@/features/auth/component/FirebaseProvider';
 
 export const metadata = {
   title: 'Jake.log',
@@ -66,6 +67,7 @@ export default function RootLayout({
     <html lang='kr'>
       <head></head>
       <body className={clsx([roboto.variable, multima.className])}>
+        <FirebaseProvider />
         {children}
       </body>
     </html>
