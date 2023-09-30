@@ -23,8 +23,10 @@ const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
 const auth = typeof window !== 'undefined' ? getAuth(app) : null;
 const provider = new GithubAuthProvider();
 
-export default () => {
+const FirebaseProvider = () => {
   const initialize = useFirebaseStore((state) => state.initialize);
   initialize({ auth: auth, provider: provider });
   return <></>;
 };
+
+export default FirebaseProvider;
