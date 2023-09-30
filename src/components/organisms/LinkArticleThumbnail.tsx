@@ -1,8 +1,8 @@
-import LinkArticleSummary, { SummaryProps } from "@/components/molecule/LinkArticleSummary";
+import LinkArticleSummary, {
+  SummaryProps,
+} from '@/components/molecule/LinkArticleSummary';
 
-interface Props extends SummaryProps {
-
-}
+interface Props extends SummaryProps {}
 
 const LinkArticleThumbnail = ({ ...props }: Props) => {
   return (
@@ -13,10 +13,12 @@ const LinkArticleThumbnail = ({ ...props }: Props) => {
         alt={'test'}
         width={280}
       />
-      <span className={'absolute w-full h-full bg-primaryAlpha-40 top-0 left-0'} />
+      <span
+        className={'absolute w-full h-full bg-primaryAlpha-40 top-0 left-0'}
+      />
       <LinkArticleSummary {...props} />
     </div>
-  )
-}
+  );
+};
 
 export default LinkArticleThumbnail;

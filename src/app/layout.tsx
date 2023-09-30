@@ -1,19 +1,20 @@
-import './globals.css'
-import localFont from "@next/font/local";
-import { Noto_Sans_KR } from "@next/font/google";
-import clsx from "clsx";
+import './globals.css';
+import localFont from '@next/font/local';
+import { Noto_Sans_KR } from '@next/font/google';
+import clsx from 'clsx';
+import FirebaseProvider from '@/features/auth/component/FirebaseProvider';
 
 export const metadata = {
   title: 'Jake.log',
   description: '프론트엔드 전반적인 영역에서 고민합니다.',
   icons: {
-    icon: '/favicon.ico'
+    icon: '/favicon.ico',
   },
   openGraph: {
     type: 'website',
     siteName: 'Jake.log',
-  }
-}
+  },
+};
 
 const roboto = Noto_Sans_KR({
   preload: true,
@@ -32,7 +33,7 @@ const multima = localFont({
     {
       path: '../../public/fonts/Multima-BoldItalic.woff',
       weight: '700',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../../public/fonts/Multima-Medium.woff',
@@ -41,7 +42,7 @@ const multima = localFont({
     {
       path: '../../public/fonts/Multima-MediumItalic.woff',
       weight: '500',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../../public/fonts/Multima-Regular.woff',
@@ -50,23 +51,25 @@ const multima = localFont({
     {
       path: '../../public/fonts/Multima-RegularItalic.woff',
       weight: '400',
-      style: 'italic'
+      style: 'italic',
     },
   ],
   fallback: ['--font-roboto'],
-  variable: '--font-multima'
-})
+  variable: '--font-multima',
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="kr">
+    <html lang='kr'>
+      <head></head>
       <body className={clsx([roboto.variable, multima.className])}>
-      {children}
+        <FirebaseProvider />
+        {children}
       </body>
     </html>
-  )
+  );
 }

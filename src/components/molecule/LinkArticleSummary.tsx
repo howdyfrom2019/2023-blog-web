@@ -1,6 +1,6 @@
-'use client'
+'use client';
 import ArrowLink from '@/assets/arrow-link.svg';
-import Chip from "@/components/atom/Chip";
+import Chip from '@/components/atom/Chip';
 
 export interface SummaryProps {
   title: string;
@@ -9,7 +9,12 @@ export interface SummaryProps {
   categories?: string[];
 }
 
-const LinkArticleSummary = ({ title, to, description, categories }: SummaryProps) => {
+const LinkArticleSummary = ({
+  title,
+  to,
+  description,
+  categories,
+}: SummaryProps) => {
   return (
     <section className={'flex flex-col gap-3'}>
       <div className={'flex flex-nowrap gap-2 cursor-pointer'}>
@@ -18,14 +23,11 @@ const LinkArticleSummary = ({ title, to, description, categories }: SummaryProps
       </div>
       <span className={'font-regular-16'}>{description}</span>
       <div className={'flex flex-nowrap gap-3'}>
-        {
-          categories && categories.map((category) => (
-            <Chip key={category}>{category}</Chip>
-          ))
-        }
+        {categories &&
+          categories.map((category) => <Chip key={category}>{category}</Chip>)}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default LinkArticleSummary;

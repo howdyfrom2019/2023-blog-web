@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import clsx from "clsx";
+import clsx from 'clsx';
 
 const SearchBar = ({ className, ...props }: ComponentProps<'input'>) => {
   return (
@@ -10,8 +10,10 @@ const SearchBar = ({ className, ...props }: ComponentProps<'input'>) => {
         'px-4 py-2',
         'font-medium tracking-tighter font-sans outline-none',
         className,
-      ])} {...props} />
-  )
-}
+      ])}
+      {...props}
+    />
+  );
+};
 
 export default SearchBar;

@@ -1,5 +1,5 @@
-'use client'
-import { useCallback, useEffect, useState } from "react";
+'use client';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function useGlobalSearchBar() {
   const [openSearchBar, setOpenSearchBar] = useState(false);
@@ -10,7 +10,7 @@ export default function useGlobalSearchBar() {
     setOpenSearchBar((prev) => {
       if (!prev) return prev;
       return code !== 'Escape';
-    })
+    });
     if (!shiftKey) return;
 
     setShiftClickedTime((prevTime) => {
@@ -20,7 +20,7 @@ export default function useGlobalSearchBar() {
       } else {
         return timeStamp;
       }
-    })
+    });
   }, []);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function useGlobalSearchBar() {
 
     return () => {
       window.removeEventListener('keydown', onCallOpenSearchBar, false);
-    }
+    };
   }, [onCallOpenSearchBar]);
 
   return openSearchBar;
