@@ -11,12 +11,8 @@ const Footer = () => {
     >
       1년차 프론트엔드 엔지니어 김성주입니다.
       <div className={'flex gap-4 mt-7'}>
-        <Button className={'font-bold-24'} btnType={'clear'}>
-          CV
-        </Button>
-        <Button className={'font-bold-24'} btnType={'clear'}>
-          PORTFOLIO
-        </Button>
+        <Button className={'font-bold-24'}>CV</Button>
+        <Button className={'font-bold-24'}>PORTFOLIO</Button>
       </div>
       <div className={'flex gap-4 mt-12'}>
         <Link

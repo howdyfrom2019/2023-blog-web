@@ -19,35 +19,26 @@ interface FiresbaseStoreState {
   setAuth: (auth: OauthTokenProps) => void;
 }
 
-export const useFirebaseStore = create<FiresbaseStoreState>()(
-  devtools(
-    persist(
-      (set) => ({
-        firebase: { auth: null, provider: null },
-        initialize: (firebase) =>
-          set((state) => {
-            const result = { ...state };
-            if (firebase.auth) {
-              result['firebase'].auth = firebase.auth;
-            }
-            if (firebase.provider) {
-              result['firebase'].provider = firebase.provider;
-            }
-
-            return result;
-          }),
-        setAuth: (auth) =>
-          set((state) => {
-            const result = { ...state };
-            if (auth) {
-              result['auth'] = auth;
-            }
-            return result;
-          }),
-      }),
-      {
-        name: 'firebase-storage',
+export const useFirebaseStore = create<FiresbaseStoreState>()((set) => ({
+  firebase: { auth: null, provider: null },
+  initialize: (firebase) =>
+    set((state) => {
+      const result = { ...state };
+      if (firebase.auth) {
+        result['firebase'].auth = firebase.auth;
       }
-    )
-  )
-);
+      if (firebase.provider) {
+        result['firebase'].provider = firebase.provider;
+      }
+
+      return result;
+    }),
+  setAuth: (auth) =>
+    set((state) => {
+      const result = { ...state };
+      if (auth) {
+        result['auth'] = auth;
+      }
+      return result;
+    }),
+}));
