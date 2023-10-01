@@ -1,7 +1,7 @@
 import './globals.css';
+import '../styles/prosemirror.css';
 import localFont from 'next/font/local';
 import { Noto_Sans_KR } from 'next/font/google';
-import clsx from 'clsx';
 import FirebaseProvider from '@/features/auth/component/FirebaseProvider';
 import cn from '@/utils/cn';
 
