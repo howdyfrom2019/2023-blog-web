@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { type User, type Auth, type AuthProvider } from 'firebase/auth';
 
 interface FirebaseStoreProps {
@@ -15,9 +15,14 @@ interface OauthTokenProps {
 interface FiresbaseStoreState {
   firebase: FirebaseStoreProps;
   initialize: (firebase: FirebaseStoreProps) => void;
+}
+
+interface AuthStoreState {
   auth?: OauthTokenProps;
   setAuth: (auth: OauthTokenProps) => void;
 }
+
+export const OAUTH_KEY = '@oauth-jake-blog';
 
 export const useFirebaseStore = create<FiresbaseStoreState>()((set) => ({
   firebase: { auth: null, provider: null },
@@ -33,12 +38,26 @@ export const useFirebaseStore = create<FiresbaseStoreState>()((set) => ({
 
       return result;
     }),
-  setAuth: (auth) =>
-    set((state) => {
-      const result = { ...state };
-      if (auth) {
-        result['auth'] = auth;
-      }
-      return result;
-    }),
 }));
+
+export const useAuthStore = create<AuthStoreState>()(
+  devtools(
+    persist<AuthStoreState>(
+      (set) => ({
+        setAuth: (auth) => {
+          const { accessToken, user } = auth;
+          set({
+            auth: {
+              accessToken,
+              user,
+            },
+          });
+        },
+      }),
+      {
+        name: OAUTH_KEY,
+        storage: createJSONStorage(() => sessionStorage),
+      }
+    )
+  )
+);

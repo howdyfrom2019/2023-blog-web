@@ -1,6 +1,7 @@
 'use client';
 import RichEditor from '@/components/template/RichEditor';
 import GithubAuthLoginButton from '@/features/auth/GithubAuthLoginButton';
+import withAuth from '@/hoc/withAuth';
 import { useFirebaseStore } from '@/states/store';
 import { NextPage } from 'next';
 
@@ -13,4 +14,4 @@ const New: NextPage = () => {
   );
 };
 
-export default New;
+export default withAuth(New);

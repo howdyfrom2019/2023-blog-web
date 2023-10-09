@@ -1,11 +1,11 @@
 import { FirebaseError } from 'firebase/app';
 import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useFirebaseStore } from '@/states/store';
+import { useAuthStore, useFirebaseStore } from '@/states/store';
 import Button from '@/components/atom/Button';
 
 const GithubAuthLoginButton = () => {
   const { auth, provider } = useFirebaseStore((state) => state.firebase);
-  const setAuth = useFirebaseStore((state) => state.setAuth);
+  const setAuth = useAuthStore((state) => state.setAuth);
 
   const signIn = async () => {
     if (!auth || !provider) return;

@@ -4,6 +4,8 @@ module.exports = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/featurs/**/*.{js,ts,jsx,tsx}',
+    './src/hoc/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -37,6 +39,19 @@ module.exports = {
           800: 'var(--novel-stone-800)',
           900: 'var(--novel-stone-900)',
         },
+        'black-alpha': '#0F172AAB',
+      },
+      zIndex: {
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
+        9: 9,
       },
       borderSpacing: {
         px: '1px',
