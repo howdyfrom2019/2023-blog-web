@@ -47,7 +47,7 @@ const RichEditor = () => {
         editor?.chain().focus().run();
       }}
       className={cn([
-        'relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-bg-white-1 p-12 px-8',
+        'relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-bg-white-1 p-8 px-4',
         'sm:mb-[calc(20vh)] sm:rounded-lg sm:border',
       ])}
     >
