@@ -20,7 +20,7 @@ export const defaultExtensions = [
   StarterKit.configure({
     bulletList: {
       HTMLAttributes: {
-        class: 'list-disc list-outside leading-3 -mt-2',
+        class: 'list-disc list-outside leading-3 -mt-2 marker:text-primary',
       },
     },
     orderedList: {
@@ -30,7 +30,7 @@ export const defaultExtensions = [
     },
     listItem: {
       HTMLAttributes: {
-        class: 'leading-normal -mb-2',
+        class: 'leading-normal -mb-2 marker:text-primary',
       },
     },
     blockquote: {
@@ -40,8 +40,7 @@ export const defaultExtensions = [
     },
     codeBlock: {
       HTMLAttributes: {
-        class:
-          'rounded-sm bg-stone-100 p-5 font-mono font-medium text-stone-800',
+        class: 'rounded-sm bg-stone-100 p-5 font-mono font-medium',
       },
     },
     code: {
@@ -87,7 +86,7 @@ export const defaultExtensions = [
   TiptapLink.configure({
     HTMLAttributes: {
       class:
-        'text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer',
+        'underline underline-offset-[3px] transition-colors cursor-pointer',
     },
   }),
   TiptapImage.extend({

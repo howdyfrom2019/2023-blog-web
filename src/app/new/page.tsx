@@ -1,14 +1,15 @@
 'use client';
+import InputWithLegend from '@/components/molecule/InputWithLegend';
+import Header from '@/components/organisms/Header';
 import RichEditor from '@/components/template/RichEditor';
-import GithubAuthLoginButton from '@/features/auth/GithubAuthLoginButton';
 import withAuth from '@/hoc/withAuth';
-import { useFirebaseStore } from '@/states/store';
 import { NextPage } from 'next';
 
 const New: NextPage = () => {
   return (
-    <div className={'flex items-center flex-col'}>
-      <GithubAuthLoginButton />
+    <div className={'flex flex-col gap-8 p-6'}>
+      <Header />
+      <InputWithLegend legend={'글 제목(Title)'} type={'INPUT'} />
       <RichEditor />
     </div>
   );

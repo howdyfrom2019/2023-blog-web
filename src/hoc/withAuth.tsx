@@ -1,4 +1,6 @@
 import NoSSR from '@/components/atom/NoSSR';
+import Modal from '@/components/molecule/Modal';
+import GithubAuthLoginButton from '@/features/auth/GithubAuthLoginButton';
 import { useAuthStore } from '@/states/store';
 import cn from '@/utils/cn';
 
@@ -16,18 +18,26 @@ export default function withAuth<P extends {}>(
         <NoSSR>
           <div
             className={cn([
-              'absolute left-0 top-0 z-2 flex h-full w-full items-center justify-center shadow-search-bar bg-black-alpha',
+              'absolute inset-0 z-2 bg-black-alpha',
               auth && hasLoggedIn && isMasterUser && 'hidden',
             ])}
           >
             {!auth || !hasLoggedIn ? (
-              <div
-                className={
-                  'absolute left-0 top-0 z-2 flex h-full w-full items-center justify-center shadow-search-bar'
-                }
+              <Modal
+                open={!auth || !hasLoggedIn}
+                title={'로그인이 필요한 화면입니다.'}
               >
-                Login plz!
-              </div>
+                <>
+                  <span className={'font-regular-16'}>
+                    편집 권한이 있는 유저만 글 작성이 가능합니다. 그래도 정말
+                    로그인하시겠습니까?
+                    <br />
+                    The only users who have editor authority can post an
+                    article. Are u sure to login?
+                  </span>
+                  <GithubAuthLoginButton />
+                </>
+              </Modal>
             ) : (
               !isMasterUser && (
                 <span>You do not have authority to create post</span>

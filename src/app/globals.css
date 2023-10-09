@@ -121,6 +121,7 @@
 :root {
   --background-white: #f9f6ee;
   --primary: #1831bc;
+  --primary-alpha: #1831bc40;
   --novel-black: rgb(0 0 0);
   --novel-white: rgb(255 255 255);
   --novel-stone-50: rgb(250 250 249);

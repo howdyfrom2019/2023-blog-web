@@ -14,7 +14,10 @@ export default function useGlobalSearchBar() {
     if (!shiftKey) return;
 
     setShiftClickedTime((prevTime) => {
-      if (timeStamp - prevTime <= 200) {
+      if (
+        timeStamp - prevTime <= 200 &&
+        (code === 'ShiftLeft' || code === 'ShiftRight')
+      ) {
         setOpenSearchBar(true);
         return prevTime;
       } else {

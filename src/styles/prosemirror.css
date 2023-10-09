@@ -76,17 +76,17 @@ ul[data-type='taskList'] li > label input[type='checkbox'] {
   height: 1.2em;
   position: relative;
   top: 5px;
-  border: 2px solid var(--novel-stone-900);
+  border: 1px solid var(--primary-alpha);
   margin-right: 0.3rem;
   display: grid;
   place-content: center;
 
   &:hover {
-    background-color: var(--novel-stone-50);
+    background-color: var(--novel-stone-200);
   }
 
   &:active {
-    background-color: var(--novel-stone-200);
+    background-color: var(--primary);
   }
 
   &::before {

@@ -81,6 +81,25 @@ module.exports = {
           to: { transform: 'translate(-50%)', zIndex: 999, opacity: 1 },
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#1831bc',
+            h1: {
+              color: '#1831bc',
+            },
+            h2: {
+              color: '#1831bc',
+            },
+            h3: {
+              color: '#1831bc',
+            },
+            h4: {
+              color: '#1831bc',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
