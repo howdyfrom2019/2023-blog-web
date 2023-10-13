@@ -37,6 +37,18 @@ const Dropdown: React.FC<DropdownProps> = ({
     }
   };
 
+  const handleClickOption = (option: OptionType) => {
+    if (selectedValue.find((value) => value.key === option.key)) {
+      return;
+    }
+
+    if (multiple) {
+      setSelectedValue((prev) => [...prev, option]);
+    } else {
+      setSelectedValue([option]);
+    }
+  };
+
   useEffect(() => {
     if (!document) return;
     document.addEventListener('click', resetOpenMenu);
@@ -95,6 +107,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+            // handleClickOption()
           }}
         >
           Dev

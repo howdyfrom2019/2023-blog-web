@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useEditor, EditorContent } from '@tiptap/react';
+import { useEditor, EditorContent, Content } from '@tiptap/react';
 import { TiptapEditorProps, getPrevText } from '@/utils/editor';
 import { useDebouncedCallback } from 'use-debounce';
 import cn from '@/utils/cn';
@@ -15,7 +15,7 @@ const RichEditor = () => {
   const [hydrated, setHydrated] = useState(false);
 
   const debouncedUpdates = useDebouncedCallback(async ({ editor }) => {
-    const json = editor.getJSON();
+    const json = editor.getHTML();
     setSaveStatus('Saving...');
     setContent(json);
     // Simulate a delay in saving.
@@ -47,7 +47,7 @@ const RichEditor = () => {
         editor?.chain().focus().run();
       }}
       className={cn([
-        'relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-bg-white-1 p-8 px-4',
+        'relative min-h-[500px] w-full max-w-screen-lg border-primary bg-bg-white-1 p-8 px-4',
         'sm:mb-[calc(20vh)] sm:rounded-lg sm:border',
       ])}
     >

@@ -8,9 +8,10 @@ import cn from '@/utils/cn';
 export const metadata = {
   title: 'Jake.log',
   description: '프론트엔드 전반적인 영역에서 고민합니다.',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  icons: [
+    { url: './favicon.svg', sizes: '16x16' },
+    { url: './favicon.ico', sizes: '16x16' },
+  ],
   openGraph: {
     type: 'website',
     siteName: 'Jake.log',

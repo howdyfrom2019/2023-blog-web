@@ -87,15 +87,23 @@ module.exports = {
             color: '#1831bc',
             h1: {
               color: '#1831bc',
+              marginTop: 8,
+              marginBottom: 8,
             },
             h2: {
               color: '#1831bc',
+              marginTop: 8,
+              marginBottom: 8,
             },
             h3: {
               color: '#1831bc',
+              marginTop: 8,
+              marginBottom: 8,
             },
             h4: {
               color: '#1831bc',
+              marginTop: 8,
+              marginBottom: 8,
             },
           },
         },
