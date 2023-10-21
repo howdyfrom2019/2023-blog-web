@@ -1,10 +1,12 @@
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { type User, type Auth, type AuthProvider } from 'firebase/auth';
+import { type Firestore } from 'firebase/firestore';
 
 interface FirebaseStoreProps {
   auth: Auth | null;
   provider: AuthProvider | null;
+  db: Firestore | null;
 }
 
 interface OauthTokenProps {
@@ -25,15 +27,20 @@ interface AuthStoreState {
 export const OAUTH_KEY = '@oauth-jake-blog';
 
 export const useFirebaseStore = create<FiresbaseStoreState>()((set) => ({
-  firebase: { auth: null, provider: null },
+  firebase: { auth: null, provider: null, db: null },
   initialize: (firebase) =>
     set((state) => {
       const result = { ...state };
       if (firebase.auth) {
         result['firebase'].auth = firebase.auth;
       }
+
       if (firebase.provider) {
         result['firebase'].provider = firebase.provider;
+      }
+
+      if (firebase.db) {
+        result['firebase'].db = firebase.db;
       }
 
       return result;

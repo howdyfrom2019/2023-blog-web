@@ -103,15 +103,19 @@ const Dropdown: React.FC<DropdownProps> = ({
           원하는 카테고리를 입력하세요.
         </span>
         <hr className={'w-full h-0.5 bg-primary'} />
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            // handleClickOption()
-          }}
-        >
-          Dev
-        </button>
+        {options.map((option) => (
+          <button
+            className={'text-start'}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              handleClickOption(option);
+            }}
+            key={option.key}
+          >
+            {option.displayName}
+          </button>
+        ))}
       </div>
     </div>
   );

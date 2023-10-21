@@ -1,9 +1,9 @@
 'use client';
 
 import { useFirebaseStore } from '@/states/store';
-import { getAnalytics } from 'firebase/analytics';
 import { getApps, initializeApp } from 'firebase/app';
 import { getAuth, GithubAuthProvider } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -21,10 +21,11 @@ const app =
 
 const auth = typeof window !== 'undefined' ? getAuth(app) : null;
 const provider = new GithubAuthProvider();
+const db = getFirestore(app);
 
 const FirebaseProvider = () => {
   const initialize = useFirebaseStore((state) => state.initialize);
-  initialize({ auth: auth, provider: provider });
+  initialize({ auth: auth, provider: provider, db: db });
   return <></>;
 };
 
