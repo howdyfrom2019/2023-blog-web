@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useEditor, EditorContent } from '@tiptap/react';
+import { useEditor, EditorContent, Content } from '@tiptap/react';
 import { TiptapEditorProps, getPrevText } from '@/utils/editor';
 import { useDebouncedCallback } from 'use-debounce';
 import cn from '@/utils/cn';
@@ -9,13 +9,17 @@ import { EditorBubbleMenu } from '@/components/molecule/editor';
 import { ImageResizer } from '@/components/atom/editor/extensions/image-resizer';
 import { defaultExtensions } from '@/components/atom/editor/extensions';
 
-const RichEditor = () => {
-  const [content, setContent] = useState('default content');
+interface RichEditorProps {
+  onChange?: (content: any) => void;
+}
+
+const RichEditor = ({ onChange }: RichEditorProps) => {
+  const [content, setContent] = useState<any>('default content');
   const [saveStatus, setSaveStatus] = useState('Saved');
   const [hydrated, setHydrated] = useState(false);
 
   const debouncedUpdates = useDebouncedCallback(async ({ editor }) => {
-    const json = editor.getJSON();
+    const json = editor.getHTML();
     setSaveStatus('Saving...');
     setContent(json);
     // Simulate a delay in saving.
@@ -35,11 +39,14 @@ const RichEditor = () => {
   });
 
   useEffect(() => {
+    if (content) {
+      onChange?.(content);
+    }
     if (editor && content && !hydrated) {
       editor.commands.setContent(content);
       setHydrated(true);
     }
-  }, [editor, content, hydrated]);
+  }, [editor, content, hydrated, onChange]);
 
   return (
     <div
@@ -47,7 +54,7 @@ const RichEditor = () => {
         editor?.chain().focus().run();
       }}
       className={cn([
-        'relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-bg-white-1 p-8 px-4',
+        'relative min-h-[500px] w-full max-w-screen-lg border-primary bg-bg-white-1 p-8 px-4',
         'sm:mb-[calc(20vh)] sm:rounded-lg sm:border',
       ])}
     >
