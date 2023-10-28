@@ -9,8 +9,12 @@ import { EditorBubbleMenu } from '@/components/molecule/editor';
 import { ImageResizer } from '@/components/atom/editor/extensions/image-resizer';
 import { defaultExtensions } from '@/components/atom/editor/extensions';
 
-const RichEditor = () => {
-  const [content, setContent] = useState('default content');
+interface RichEditorProps {
+  onChange?: (content: any) => void;
+}
+
+const RichEditor = ({ onChange }: RichEditorProps) => {
+  const [content, setContent] = useState<any>('default content');
   const [saveStatus, setSaveStatus] = useState('Saved');
   const [hydrated, setHydrated] = useState(false);
 
@@ -35,11 +39,14 @@ const RichEditor = () => {
   });
 
   useEffect(() => {
+    if (content) {
+      onChange?.(content);
+    }
     if (editor && content && !hydrated) {
       editor.commands.setContent(content);
       setHydrated(true);
     }
-  }, [editor, content, hydrated]);
+  }, [editor, content, hydrated, onChange]);
 
   return (
     <div

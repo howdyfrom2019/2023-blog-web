@@ -14,7 +14,7 @@ interface DropdownProps {
   legend?: string;
   multiple?: boolean;
   options: OptionType[];
-  onChange?: (options: OptionType[] | OptionType) => void;
+  onChange?: (options: OptionType[]) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -50,6 +50,11 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   useEffect(() => {
+    onChange?.(selectedValue);
+    setOpenMenu(false);
+  }, [onChange, selectedValue]);
+
+  useEffect(() => {
     if (!document) return;
     document.addEventListener('click', resetOpenMenu);
 
@@ -80,7 +85,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           setOpenMenu((prev) => !prev);
         }}
       >
-        <div></div>
+        <div>{selectedValue.map((v) => v.displayName).join(',')}</div>
         <TriangleIcon
           className={cn([
             'text-primary w-4 fill-primary rotate-180 transition-all',
@@ -105,7 +110,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <hr className={'w-full h-0.5 bg-primary'} />
         {options.map((option) => (
           <button
-            className={'text-start'}
+            className={cn(['text-start'])}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();

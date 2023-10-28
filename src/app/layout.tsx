@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import { Noto_Sans_KR } from 'next/font/google';
 import FirebaseProvider from '@/features/auth/component/FirebaseProvider';
 import cn from '@/utils/cn';
+import { Toaster } from 'sonner';
 
 export const metadata = {
   title: 'Jake.log',
@@ -20,6 +21,7 @@ export const metadata = {
 
 const roboto = Noto_Sans_KR({
   preload: true,
+  display: 'swap',
   weight: ['400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-roboto',
@@ -71,6 +73,7 @@ export default function RootLayout({
       <body
         className={cn([roboto.variable, multima.className, 'font-medium-16'])}
       >
+        <Toaster />
         <FirebaseProvider />
         {children}
       </body>
